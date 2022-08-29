@@ -55,7 +55,7 @@ public class LinkedList
 
         var newNode = new Node(data);
         var current = head;
-        for (int i = 0; i < index; i++) {
+        for (int i = 0; i < index-1; i++) {
             current = current.next;
         }
 
@@ -116,7 +116,7 @@ public class LinkedList
     {
         int listSize= 0;
         var current = head;
-        while (current.next != null) {
+        while (current != null) {
             current = current.next;
             listSize++;
         }
@@ -131,7 +131,7 @@ public class LinkedList
             return;
         }
 
-        printInReverse(head.next);
+        printInReverse(L.next);
         System.out.print(head.data + " ");
 
     }
