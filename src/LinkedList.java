@@ -24,7 +24,6 @@ public class LinkedList
             tail = tail.next; //make tail pointer points to last node
         }
     }
-
     //======== Your part to complete for this assignment =========
 
     //method #1: add first node
@@ -71,7 +70,7 @@ public class LinkedList
             return;
         }
 
-        head.next = head;
+        head = head.next;
     }
 
     //method #4: remove last node
