@@ -1,22 +1,33 @@
+// Name: Jacob Germana-McCray
+// Class: CS 3305/Section#04
+// Term: Fall 2022
+// Instructor: Dr. Majeed
+// Assignment: 2
+
 import java.util.Scanner;
 
 public class myTest
 {
     static Scanner sc = new Scanner(System.in);
 
-    static LinkedList g_list = new LinkedList();
+    // Global list to keep track of values across switch cases.
+    static LinkedList gList = new LinkedList();
 
     public static void main (String[] args)
     {
         menu();
     }
 
+    // Simple input method, so I don't have to repeat code.
     static int input(String msg) {
         System.out.print(msg);
         return Integer.parseInt(sc.next());
     }
-
-
+    /// The logic of the program.
+    ///
+    /// Prompts for the user input, then sends the output into
+    /// the switch statement to be acted upon.
+    ///
     static void menu() {
         while (true) {
             System.out.println(
@@ -41,95 +52,94 @@ public class myTest
             int index;
             var choice = input("");
             switch (choice) {
-                case 1:
-                    preList = g_list;
+                case 1 -> {
+                    preList = gList;
                     data = input("Value to add: ");
-                    g_list.addFirstNode(data);
+                    gList.addFirstNode(data);
                     System.out.println("Added value " + data + " as the first node.");
                     System.out.print("List content before adding " + data + " is: ");
                     preList.printList();
                     System.out.println();
                     System.out.print("List content after adding " + data + "is: ");
-                    g_list.printList();
+                    gList.printList();
                     System.out.println();
-                    break;
-                case 2:
-                    preList = g_list;
+                }
+                case 2 -> {
+                    preList = gList;
                     data = input("Value to add: ");
-                    g_list.addLastNode(data);
+                    gList.addLastNode(data);
                     System.out.println("Added value " + data + " as the last node.");
                     System.out.print("List content before adding " + data + " is: ");
                     preList.printList();
                     System.out.println();
                     System.out.print("List content after adding " + data + "is: ");
-                    g_list.printList();
+                    gList.printList();
                     System.out.println();
-                    break;
-                case 3:
-                    preList = g_list;
+                }
+                case 3 -> {
+                    preList = gList;
                     data = input("Value to add: ");
                     index = input("index to add at");
-                    g_list.addAtIndex(index, data);
+                    gList.addAtIndex(index, data);
                     System.out.println("Added value " + data + " at index " + index + ".");
                     System.out.print("List content before adding " + data + " is: ");
                     preList.printList();
                     System.out.println();
                     System.out.print("List content after adding " + data + "is: ");
-                    g_list.printList();
+                    gList.printList();
                     System.out.println();
-                    break;
-                case 4:
-                    preList = g_list;
-                    g_list.removeFirstNode();
+                }
+                case 4 -> {
+                    preList = gList;
+                    gList.removeFirstNode();
                     System.out.println("Removed first node.");
                     System.out.print("List content before removing first node was: ");
                     preList.printList();
                     System.out.println();
                     System.out.print("List content after removing first node is: ");
-                    g_list.printList();
+                    gList.printList();
                     System.out.println();
-                    break;
-                case 5:
-                    preList = g_list;
-                    g_list.removeLastNode();
+                }
+                case 5 -> {
+                    preList = gList;
+                    gList.removeLastNode();
                     System.out.println("Removed last node.");
                     System.out.print("List content before removing last node was: ");
                     preList.printList();
                     System.out.println();
                     System.out.print("List content after removing last node is: ");
-                    g_list.printList();
+                    gList.printList();
                     System.out.println();
-                    break;
-                case 6:
-                    preList = g_list;
+                }
+                case 6 -> {
+                    preList = gList;
                     index = input("index to remove");
-                    g_list.removeAtIndex(index);
+                    gList.removeAtIndex(index);
                     System.out.println("Removed node at index " + index + ".");
                     System.out.print("List content before removing index " + index + ": ");
                     preList.printList();
                     System.out.println();
                     System.out.print("List content after removing index " + index + ": ");
-                    g_list.printList();
+                    gList.printList();
                     System.out.println();
-                    break;
-                case 7:
-                    System.out.println("List size: " + g_list.countNodes() + ".");
-                    break;
-                case 8:
+                }
+                case 7 -> System.out.println("List size: " + gList.countNodes() + ".");
+                case 8 -> {
                     System.out.print("The current list forwards is: ");
-                    g_list.printList();
+                    gList.printList();
                     System.out.println();
-                    break;
-                case 9:
+                }
+                case 9 -> {
                     System.out.print("The current list backwards is: ");
-                    g_list.printInReverse(g_list.head);
+                    gList.printInReverse(gList.head);
                     System.out.println();
-                    break;
-                case 10:
+                }
+                case 10 -> {
                     System.out.println("Exiting program.");
                     return;
-                default:
-                    break;
+                }
+                default -> {
+                }
             }
 
         }
